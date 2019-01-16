@@ -7,6 +7,11 @@ module.exports = {
 
         rules: [
             {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node-modules/
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
@@ -30,7 +35,9 @@ module.exports = {
             filename: 'style.css'
         })
     ],
+    resolve: {
+        extensions: [".tsx", ".ts", '.js']
+    },
 
     devtool: 'inline-source-map'
-
 };
